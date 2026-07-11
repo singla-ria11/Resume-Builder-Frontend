@@ -16,6 +16,10 @@ const Login = () => {
     e.preventDefault();
   };
 
+  const inputWrapper =
+    "flex items-center mt-6 w-full bg-white border border-gray-300/80 h-12 rounded-full overflow-hidden pl-6 gap-2";
+  const inputClass = "border-none outline-none ring-0";
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -33,38 +37,38 @@ const Login = () => {
           Please {authState} to continue
         </p>
         {authState !== "login" && (
-          <div className="flex items-center mt-6 w-full bg-white border border-gray-300/80 h-12 rounded-full overflow-hidden pl-6 gap-2">
+          <div className={inputWrapper}>
             <User2Icon size={16} color="#6B7280" />
             <input
               type="text"
               name="name"
               placeholder="Name"
-              className="border-none outline-none ring-0"
+              className={inputClass}
               value={formData.name}
               onChange={handleChange}
               required
             />
           </div>
         )}
-        <div className="flex items-center w-full mt-4 bg-white border border-gray-300/80 h-12 rounded-full overflow-hidden pl-6 gap-2">
+        <div className={inputWrapper}>
           <Mail size={13} color="#6B7280" />
           <input
             type="email"
             name="email"
             placeholder="Email id"
-            className="border-none outline-none ring-0"
+            className={inputClass}
             value={formData.email}
             onChange={handleChange}
             required
           />
         </div>
-        <div className="flex items-center mt-4 w-full bg-white border border-gray-300/80 h-12 rounded-full overflow-hidden pl-6 gap-2">
+        <div className={inputWrapper}>
           <Lock size={13} color="#6B7280" />
           <input
             type="password"
             name="password"
             placeholder="Password"
-            className="border-none outline-none ring-0"
+            className={inputClass}
             value={formData.password}
             onChange={handleChange}
             required
@@ -83,7 +87,6 @@ const Login = () => {
         </button>
         <p
           onClick={() => {
-            // setState((prev) => (prev === "login" ? "register" : "login"));
             setSearchParams({
               state: authState === "login" ? "register" : "login",
             });
