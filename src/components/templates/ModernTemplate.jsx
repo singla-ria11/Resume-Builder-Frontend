@@ -1,4 +1,7 @@
-import { Mail, Phone, MapPin, Linkedin, Globe } from "lucide-react";
+import { Mail, Phone, MapPin, Globe } from "lucide-react";
+import { FiLinkedin } from "react-icons/fi";
+// import { FaLinkedin } from "react-icons/fa6";
+
 
 const ModernTemplate = ({ data, accentColor }) => {
   const formatDate = (dateStr) => {
@@ -46,7 +49,7 @@ const ModernTemplate = ({ data, accentColor }) => {
               href={data.personal_info?.linkedin}
               className="flex items-center gap-2"
             >
-              <Linkedin className="size-4" />
+              <FiLinkedin className="size-4 text-black-500" />
               <span className="break-all text-xs">
                 {data.personal_info.linkedin.split("https://www.")[1]
                   ? data.personal_info.linkedin.split("https://www.")[1]

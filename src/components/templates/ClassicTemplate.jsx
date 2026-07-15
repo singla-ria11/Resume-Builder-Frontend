@@ -1,4 +1,8 @@
-import { Mail, Phone, MapPin, Linkedin, Globe } from "lucide-react";
+import { Mail, Phone, MapPin, Globe } from "lucide-react";
+// import { FaLinkedinIn } from "react-icons/fa6";
+import { FiLinkedin } from "react-icons/fi";
+// import { FaLinkedinIn } from "react-icons/fa6";
+// import { SlSocialLinkedin } from "react-icons/sl";
 
 const ClassicTemplate = ({ data, accentColor }) => {
   const formatDate = (dateStr) => {
@@ -42,7 +46,7 @@ const ClassicTemplate = ({ data, accentColor }) => {
           )}
           {data.personal_info?.linkedin && (
             <div className="flex items-center gap-1">
-              <Linkedin className="size-4" />
+              <FiLinkedin className="size-4 text-black-500" />
               <span className="break-all">{data.personal_info.linkedin}</span>
             </div>
           )}
